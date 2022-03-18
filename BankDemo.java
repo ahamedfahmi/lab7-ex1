@@ -19,7 +19,7 @@ public class BankDemo {
 		double am = account.getAmount();
  		String amount = Double.toString(am);
 		
-		throw new InsufficientBalanceException(amount);
+		//throw new InsufficientBalanceException(amount); this not needed 
 		} 
 		catch (InsufficientBalanceException e) { 
 			System.out.println("Sorry, your account remains only Rs." + e.getMessage()); 
