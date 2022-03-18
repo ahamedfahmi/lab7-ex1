@@ -2,8 +2,14 @@ package EX1;
 
 public class InsufficientBalanceException extends Exception {
 	
-	public InsufficientBalanceException(String message) {
-		super(message);
+	private double amount; 
+	
+	public InsufficientBalanceException(double amount) {
+		this.amount = amount;
+	}
+	
+	public double getamount() {
+		return amount;
 	}
 	
 
