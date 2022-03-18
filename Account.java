@@ -5,6 +5,7 @@ public class Account {
 	private int Account_no;
 	private double balance;
 	private double withdraw;
+	double need;
 	
 	public Account() {
 		this.Account_no = 0;
@@ -19,20 +20,17 @@ public class Account {
 		return balance+=deposit;
 	}
 	
-	public double withdraw(double withdraw) /*throws InsufficientBalanceException*/ {
+	public double withdraw(double withdraw) throws InsufficientBalanceException {
 		this.withdraw = withdraw;
 		 if(withdraw <= balance)
 			 balance-=withdraw;
-//		 else
-//			 try {
-//					double am = balance;
-//					String amount = Double.toString(am);
-//				 
-//				 throw new InsufficientBalanceException(amount);
-//			 }catch(InsufficientBalanceException e){
-//				 e.printStackTrace();
-//			 }
-		return withdraw;
+		 else {
+			 need = withdraw - balance;
+		 	 throw new InsufficientBalanceException(need);
+		 	
+		 	// in here you don't need to include try catch
+		
+		 }return withdraw;
 	    
 	}
 	
